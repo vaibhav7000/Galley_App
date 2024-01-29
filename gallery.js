@@ -14,28 +14,33 @@ async function getData(){
     container.classList.add("col","rounded");
 
     let image = document.createElement("img");
-    image.classList.add("img-fluid" ,"h-75");
+    image.classList.add("img-fluid" );
     image.classList.add("rounded","w-100","gallery-item");
 
     let imgaeBody = document.createElement("div");
-    imgaeBody.classList.add("card-body","flex","flex-col","items-center","justify-center","text-white");
+    imgaeBody.classList.add("mt-2","row");
+
+    let imageBodyContainer = document.createElement("div");
+    imageBodyContainer.classList.add("col","text-center");
 
     let title = document.createElement("p");
-    title.classList.add("card-title","h3","uppercase");
+    title.classList.add("uppercase","text-black","text-break","fw-bold");
 
     let desc = document.createElement("p");
-    title.classList.add("card-text");
+    desc.classList.add("text-white","text-break");
 
     desc.innerText = `${element.Description}`;
     title.innerText= `${element.Title}`;
 
     image.src = `${element.Base64Img}`;
 
-    imgaeBody.appendChild(title);
-    imgaeBody.appendChild(desc);
+    imageBodyContainer.appendChild(title);
+    imageBodyContainer.appendChild(desc);
+
+
 
     container.appendChild(image);
-    container.appendChild(imgaeBody);
+    container.appendChild(imageBodyContainer);
 
     row.appendChild(container);
   });
